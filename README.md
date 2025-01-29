@@ -7,7 +7,7 @@ Stackyrice is built on  [Mezzio](https://github.com/mezzio/mezzio) with the foll
 - Modular type of installation
 - Laminas Service Manager as Container Interface
 - Laminas Router as Router
-- No template engine for the Skeleton
+- Twig template engine for the Skeleton and the Skeleton CSS library
 - Whoops to handle errors
 
 ## Getting Started
