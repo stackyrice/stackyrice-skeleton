@@ -34,7 +34,7 @@ class HomePageHandler implements RequestHandlerInterface
     {
         $data = [];
 
-        switch ($this->containerName) {
+        switch ( $this->containerName ) {
             case ServiceManager::class:
                 $data['containerName'] = 'Laminas Servicemanager';
                 $data['containerDocs'] = 'https://docs.laminas.dev/laminas-servicemanager/';
@@ -54,28 +54,28 @@ class HomePageHandler implements RequestHandlerInterface
                 break;
         }
 
-        if ($this->router instanceof FastRouteRouter) {
+        if ( $this->router instanceof FastRouteRouter ) {
             $data['routerName'] = 'FastRoute';
             $data['routerDocs'] = 'https://github.com/nikic/FastRoute';
-        } elseif ($this->router instanceof LaminasRouter) {
+        } elseif ( $this->router instanceof LaminasRouter ) {
             $data['routerName'] = 'Laminas Router';
             $data['routerDocs'] = 'https://docs.laminas.dev/laminas-router/';
         }
 
-        if ($this->template === null) {
+        if ( $this->template === null ) {
             return new JsonResponse([
                 'welcome' => 'Congratulations! You have installed the mezzio skeleton application.',
                 'docsUrl' => 'https://docs.mezzio.dev/mezzio/',
             ] + $data);
         }
 
-        if ($this->template instanceof PlatesRenderer) {
+        if ( $this->template instanceof PlatesRenderer ) {
             $data['templateName'] = 'Plates';
             $data['templateDocs'] = 'https://platesphp.com/';
-        } elseif ($this->template instanceof TwigRenderer) {
+        } elseif ( $this->template instanceof TwigRenderer ) {
             $data['templateName'] = 'Twig';
             $data['templateDocs'] = 'https://twig.symfony.com';
-        } elseif ($this->template instanceof LaminasViewRenderer) {
+        } elseif ( $this->template instanceof LaminasViewRenderer ) {
             $data['templateName'] = 'Laminas View';
             $data['templateDocs'] = 'https://docs.laminas.dev/laminas-view/';
         }

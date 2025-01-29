@@ -29,7 +29,7 @@ class InMemoryContainer implements ContainerInterface
      */
     public function get($id)
     {
-        if (! $this->has($id)) {
+        if( ! $this->has($id) ) {
             throw new RuntimeException(sprintf('Service not found "%s"', $id));
         }
 

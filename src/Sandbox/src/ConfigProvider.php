@@ -16,7 +16,7 @@ class ConfigProvider
     private function getDependencies(): array
     {
         return [
-            'factories'  => [
+            'factories' => [
                 Handler\SandboxHandler::class => Handler\SandboxHandlerFactory::class,
             ],
         ] ;
